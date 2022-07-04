@@ -1,0 +1,13 @@
+diff --git a/node_modules/import-in-the-middle/hook.mjs b/node_modules/import-in-the-middle/hook.mjs
+index 86e1fc3..73ea59c 100644
+--- a/node_modules/import-in-the-middle/hook.mjs
++++ b/node_modules/import-in-the-middle/hook.mjs
+@@ -4,7 +4,7 @@
+ 
+ const specifiers = new Map()
+ 
+-const EXTENSION_RE = /\.(js|mjs|cjs)$/
++const EXTENSION_RE = /\.(ts|mts|cts|js|mjs|cjs)$/
+ 
+ let entrypoint
+ 

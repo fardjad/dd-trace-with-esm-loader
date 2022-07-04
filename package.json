@@ -1,0 +1,33 @@
+{
+  "name": "dd-trace-with-esm-loader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A minimal-ish example of using dd-trace with ts-node/esm",
+  "scripts": {
+    "pretest": "tsc",
+    "test": "node --test --experimental-specifier-resolution=node --require=./supress-experimental-warnings.cjs --require=./init-tracer.cjs --require=ts-node/register --loader ./chain-loader.mjs test/*.test.ts | tap-mocha-reporter spec",
+    "postinstall": "patch-package"
+  },
+  "keywords": [
+    "dd-trace",
+    "datadog",
+    "ts-node",
+    "esm"
+  ],
+  "author": "Fardjad Davari <public@fardjad.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@swc/core": "^1.2.208",
+    "@swc/wasm": "^1.2.208",
+    "@types/server-destroy": "^1.0.1",
+    "dd-trace": "^2.10.0",
+    "import-in-the-middle": "^1.2.1",
+    "patch-package": "^6.4.7",
+    "server-destroy": "^1.0.1",
+    "ts-node": "^10.8.2"
+  },
+  "devDependencies": {
+    "tap-mocha-reporter": "^5.0.3"
+  }
+}
